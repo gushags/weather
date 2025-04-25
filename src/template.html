@@ -18,10 +18,16 @@
   </head>
   <body>
     <div id="map-container"></div>
+    <p id="full-address"></p>
     <div class="container">
       <div id="today">
         <div id="error-weather"></div>
-        <h1 contenteditable="true" id="city"></h1>
+        <h1
+          contenteditable="true"
+          id="city"
+          class="tooltip"
+          title="Change the city to generate new weather data."
+        ></h1>
         <div id="temp"></div>
         <img id="today-icon" alt="" />
         <div id="wind-uv">

@@ -13,17 +13,33 @@ function createToday(data) {
   const icon = document.querySelector("#today-icon");
   const wind = document.querySelector("#wind");
   const uvIndex = document.querySelector("#uvindex");
+  const address = document.querySelector("#full-address");
 
-  console.log(data);
-  city.textContent = data.address;
+  city.textContent = data.address + " ";
   temp.textContent = Math.round(data.currentConditions.temp) + "°F";
   wind.textContent = "Wind: " + data.currentConditions.windspeed + "mph";
   uvIndex.textContent = "UV Index: " + data.currentConditions.uvindex;
+  address.textContent = data.resolvedAddress;
 
+  // set icon
   import(`./icons/${data.currentConditions.icon}.svg`).then((source) => {
     icon.src = source.default;
     icon.alt = data.currentConditions.icon;
   });
+  setEndOfContenteditable(city);
+  // set cursor at end of city name
+}
+
+function setEndOfContenteditable(contentEditableElement) {
+  let range, selection;
+  if (document.createRange) {
+    range = document.createRange(); //Create a range (a range is a like the selection but invisible)
+    range.selectNodeContents(contentEditableElement); //Select the entire contents of the element with the range
+    range.collapse(false); //collapse the range to the end point. false means collapse to end rather than the start
+    selection = window.getSelection(); //get the selection object (allows you to change selection)
+    selection.removeAllRanges(); //remove any selections already made
+    selection.addRange(range); //make the range you have just created the visible selection
+  }
 }
 
 function createFuture(data) {

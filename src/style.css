@@ -4,12 +4,26 @@
 body {
   position: relative;
 }
+
 #map {
   height: 100vh;
   width: 100vw;
   position: absolute;
   z-index: -1;
 }
+
+#full-address {
+  font-style: italic;
+  background: rgb(255, 255, 255, 0.9);
+  width: max-content;
+  position: relative;
+  top: 90vh;
+  left: 5vw;
+  padding: 5px;
+  border-radius: 5px;
+  /* z-index: 10; */
+}
+
 .container {
   width: 80%;
   padding-top: 50px;
@@ -50,6 +64,10 @@ body {
 }
 h1 {
   font-size: 4rem;
+}
+
+h1:focus-visible {
+  outline: none;
 }
 
 #today {
