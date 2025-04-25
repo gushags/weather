@@ -1,0 +1,85 @@
+/*
+* style.css
+*/
+body {
+  position: relative;
+}
+#map {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: -1;
+}
+.container {
+  width: 80%;
+  padding-top: 50px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  align-items: center;
+  gap: 75px;
+}
+.day {
+  background: rgb(255, 255, 255, 0.9);
+  height: 110px;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.future-date {
+  grid-area: 1 / 1 / 2 / 3;
+}
+.chance-precip {
+  grid-area: 3 / 1 / 4 / 3;
+}
+.future-icon {
+  max-width: 60px;
+  max-height: 50px;
+  grid-area: 1 / 3 / 3 / 4;
+  align-self: center;
+  margin-left: 25px;
+}
+.future-high,
+.future-low,
+.chance-precip {
+  display: flex;
+  align-items: baseline;
+}
+h1 {
+  font-size: 4rem;
+}
+
+#today {
+  background-color: rgb(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+#city {
+  grid-area: 1 / 1 / 2 / 5;
+}
+#temp {
+  font-size: 3.5rem;
+  grid-area: 2 / 2 / 3 / 4;
+  place-self: center;
+}
+#today-icon {
+  height: 100px;
+  grid-area: 2 / 1 / 2 / 2;
+}
+#wind-uv {
+  font-size: small;
+  font-weight: bold;
+  grid-area: 2 / 4 / 3 / 5;
+  place-self: center;
+}
+
+h4 {
+  font-size: x-small;
+  margin-right: 5px;
+}
