@@ -30,7 +30,7 @@ function createToday(data) {
   // set cursor at end of city name
 }
 
-function setEndOfContenteditable(contentEditableElement) {
+export function setEndOfContenteditable(contentEditableElement) {
   let range, selection;
   if (document.createRange) {
     range = document.createRange(); //Create a range (a range is a like the selection but invisible)

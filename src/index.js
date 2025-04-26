@@ -4,7 +4,13 @@ import "./weather.js";
 import "./view.js";
 
 import { getWeather, handleError } from "./weather";
-import { displayWeather, createMap, removefuture, removeMap } from "./view.js";
+import {
+  displayWeather,
+  createMap,
+  removefuture,
+  removeMap,
+  setEndOfContenteditable,
+} from "./view.js";
 
 getWeather("Santa Clarita")
   .then(displayWeather)
@@ -20,4 +26,11 @@ city.addEventListener("keypress", function (e) {
     removeMap();
     getWeather(newCity).then(displayWeather).then(createMap).catch(handleError);
   }
+});
+
+const overlay = document.querySelector(".overlay");
+overlay.addEventListener("click", () => {
+  overlay.classList.add("display-hidden");
+  city.focus();
+  setEndOfContenteditable(city);
 });

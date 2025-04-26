@@ -5,6 +5,32 @@ body {
   position: relative;
 }
 
+.overlay {
+  position: absolute;
+  background-color: rgb(0, 0, 0, 0.5);
+  z-index: 20;
+  height: 100vh;
+  width: 100vw;
+}
+.overlay > h2 {
+  position: absolute;
+  font-size: 2rem;
+  color: white;
+  width: 600px;
+  top: 150px;
+  left: 75px;
+}
+.overlay > img {
+  width: 70px;
+  position: absolute;
+  top: 225px;
+  left: 570px;
+}
+
+.display-hidden {
+  display: none;
+}
+
 #map {
   height: 100vh;
   width: 100vw;
@@ -68,6 +94,8 @@ h1 {
 
 h1:focus-visible {
   outline: none;
+
+  caret-color: black;
 }
 
 #today {
