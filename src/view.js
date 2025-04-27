@@ -17,7 +17,8 @@ function createToday(data) {
   const wind = document.querySelector("#wind");
   const uvIndex = document.querySelector("#uvindex");
   const address = document.querySelector("#full-address");
-
+  const errorWeather = document.querySelector("#error-weather");
+  errorWeather.textContent = "";
   city.textContent = data.address + " ";
   temp.textContent = Math.round(data.currentConditions.temp) + "°F";
   wind.textContent = "Wind: " + data.currentConditions.windspeed + "mph";
@@ -119,7 +120,8 @@ export function removefuture() {
 
 export function viewError(error) {
   const errorWeather = document.querySelector("#error-weather");
-  errorWeather.textContent = `Something went wrong. Please try again. ERROR: ${error}`;
+  errorWeather.textContent = `Something went wrong. Please try again.`;
+  console.log("Error: " + error);
 }
 
 function correctDate(date) {
