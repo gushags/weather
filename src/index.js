@@ -29,8 +29,10 @@ city.addEventListener("keypress", function (e) {
 });
 
 const overlay = document.querySelector(".overlay");
-overlay.addEventListener("click", () => {
+overlay.addEventListener("click", deleteOverlay);
+
+function deleteOverlay() {
   overlay.classList.add("display-hidden");
   city.focus();
   setEndOfContenteditable(city);
-});
+}

@@ -1,7 +1,10 @@
 // view.js
 import { format } from "date-fns";
 
+let counter = 0;
+
 export function displayWeather(data) {
+  console.log(data);
   createToday(data);
   createFuture(data);
   return data;
@@ -26,10 +29,14 @@ function createToday(data) {
     icon.src = source.default;
     icon.alt = data.currentConditions.icon;
   });
-  setEndOfContenteditable(city);
-  // set cursor at end of city name
+  if (counter > 0) {
+    setEndOfContenteditable(city); // Set cursor on second city and beyond
+  }
+  console.log(counter);
+  counter++;
 }
 
+// set cursor at end of city name
 export function setEndOfContenteditable(contentEditableElement) {
   let range, selection;
   if (document.createRange) {
