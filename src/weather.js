@@ -1,6 +1,6 @@
 // weather.js
 
-import { viewError, showLoader } from "./view";
+import { viewError, showLoader, hideLoader } from "./view";
 
 export const getWeather = function getWeatherFromAPI(url) {
   return new Promise(function (resolve, reject) {
@@ -12,6 +12,7 @@ export const getWeather = function getWeatherFromAPI(url) {
       if (response.status == 200) {
         resolve(response.json());
       } else {
+        hideLoader();
         reject(response.status);
       }
     });

@@ -38,6 +38,22 @@ body {
   z-index: -1;
 }
 
+#error-weather {
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  font-size: 2rem;
+  background: rgb(255, 255, 255, 0.9);
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: 3px solid red;
+  color: red;
+  display: none;
+}
+#error-weather.show {
+  display: block;
+}
+
 #full-address {
   font-style: italic;
   background: rgb(255, 255, 255, 0.9);
@@ -47,7 +63,6 @@ body {
   left: 5vw;
   padding: 5px;
   border-radius: 5px;
-  /* z-index: 10; */
 }
 
 .container {
@@ -141,4 +156,36 @@ h4 {
 }
 #loader.show {
   display: block;
+}
+
+#loader > h2 {
+  color: rgb(33, 163, 202);
+  position: absolute;
+  font-size: 3rem;
+  top: 33%;
+  left: calc(50vw - 137px);
+}
+
+#spinner {
+  position: absolute;
+  top: 25%;
+  left: calc(50vw - 40px);
+  height: 80px;
+  width: 80px;
+  border: 15px solid;
+  border-top-color: rgb(204, 243, 255);
+  border-bottom-color: rgb(204, 243, 255);
+  border-right-color: rgb(87, 179, 207);
+  border-left-color: rgb(87, 179, 207);
+  border-radius: 50%;
+  animation: spin 1.5s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }

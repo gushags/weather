@@ -2,9 +2,12 @@
 import { format } from "date-fns";
 
 let counter = 0;
+let currentCity = "Santa Clarita";
 
 export function displayWeather(data) {
   console.log(data);
+  removeMap();
+  removefuture();
   createToday(data);
   createFuture(data);
   hideLoader();
@@ -20,7 +23,9 @@ function createToday(data) {
   const address = document.querySelector("#full-address");
   const errorWeather = document.querySelector("#error-weather");
   errorWeather.textContent = "";
-  city.textContent = data.address + " ";
+  errorWeather.classList.remove("show");
+  city.textContent = data.address;
+  currentCity = data.address;
   temp.textContent = Math.round(data.currentConditions.temp) + "°F";
   wind.textContent = "Wind: " + data.currentConditions.windspeed + "mph";
   uvIndex.textContent = "UV Index: " + data.currentConditions.uvindex;
@@ -89,7 +94,7 @@ export function showLoader() {
   loader.classList.add("show");
 }
 
-function hideLoader() {
+export function hideLoader() {
   const loader = document.querySelector("#loader");
   loader.classList.remove("show");
 }
@@ -131,7 +136,11 @@ export function removefuture() {
 
 export function viewError(error) {
   const errorWeather = document.querySelector("#error-weather");
-  errorWeather.textContent = `Something went wrong. Please try again.`;
+  const city = document.querySelector("#city");
+  city.textContent = currentCity; // Remove bad request and replace with current city
+  setEndOfContenteditable(city); // Set cursor to end of city
+  errorWeather.textContent = "Something went wrong. Please try again.";
+  errorWeather.classList.add("show");
   console.log("Error: " + error);
 }
 

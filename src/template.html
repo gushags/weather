@@ -17,7 +17,11 @@
     ></script>
   </head>
   <body>
-    <div id="loader"></div>
+    <div id="loader">
+      <div id="spinner"></div>
+      <h2>Loading ...</h2>
+    </div>
+    <div id="error-weather">This is an error</div>
     <div id="map-container"></div>
     <div class="overlay">
       <h2>
@@ -29,7 +33,6 @@
     <p id="full-address"></p>
     <div class="container">
       <div id="today">
-        <div id="error-weather"></div>
         <h1
           contenteditable="true"
           id="city"

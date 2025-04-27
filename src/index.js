@@ -4,13 +4,7 @@ import "./weather.js";
 import "./view.js";
 
 import { getWeather, handleError } from "./weather";
-import {
-  displayWeather,
-  createMap,
-  removefuture,
-  removeMap,
-  setEndOfContenteditable,
-} from "./view.js";
+import { displayWeather, createMap, setEndOfContenteditable } from "./view.js";
 
 getWeather("Santa Clarita")
   .then(displayWeather)
@@ -22,8 +16,6 @@ city.addEventListener("keydown", function (e) {
   if (e.key === "Enter") {
     e.preventDefault();
     const newCity = city.textContent;
-    removefuture();
-    removeMap();
     getWeather(newCity).then(displayWeather).then(createMap).catch(handleError);
   }
 });
