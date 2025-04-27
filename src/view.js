@@ -57,7 +57,7 @@ function createFuture(data) {
     let futureData = `<div class="day">
     <h3 class="future-date">${format(
       correctDate(data.days[i].datetime),
-      "PP"
+      "E, LLLL do"
     )}</h3>
     <div class="future-high">
       <h4>HIGH</h4>
