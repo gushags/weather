@@ -6,10 +6,10 @@ import "./view.js";
 import { getWeather, handleError } from "./weather";
 import { displayWeather, createMap, setEndOfContenteditable } from "./view.js";
 
-getWeather("Santa Clarita")
-  .then(displayWeather)
-  .then(createMap)
-  .catch(handleError);
+// Change defaultCity to your home city
+const defaultCity = "Santa Clarita";
+
+getWeather(defaultCity).then(displayWeather).then(createMap).catch(handleError);
 
 const city = document.querySelector("#city");
 city.addEventListener("keydown", function (e) {
