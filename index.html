@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App -- ODIN Project</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+  <script defer src="main.js"></script></head>
+  <body>
+    <div id="loader">
+      <div id="spinner"></div>
+      <h2>Loading ...</h2>
+    </div>
+    <div id="error-weather">This is an error</div>
+    <div id="map-container"></div>
+    <div class="overlay">
+      <h2>
+        Edit the city and press enter to access different weather data. Have
+        fun!
+      </h2>
+      <img src="80366e747e2d23127bbb.svg" alt="arrow" />
+    </div>
+    <p id="full-address"></p>
+    <div class="container">
+      <div id="today">
+        <h1
+          contenteditable="true"
+          id="city"
+          class="tooltip"
+          title="Change the city to generate new weather data."
+        ></h1>
+        <div id="temp"></div>
+        <img id="today-icon" alt="" />
+        <div id="wind-uv">
+          <p id="wind">Wind: 5mph</p>
+          <p id="uvindex">UV Index: 3</p>
+        </div>
+      </div>
+      <div id="future"></div>
+    </div>
+  </body>
+</html>
