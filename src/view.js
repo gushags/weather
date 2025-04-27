@@ -7,6 +7,7 @@ export function displayWeather(data) {
   console.log(data);
   createToday(data);
   createFuture(data);
+  hideLoader();
   return data;
 }
 
@@ -33,7 +34,6 @@ function createToday(data) {
   if (counter > 0) {
     setEndOfContenteditable(city); // Set cursor on second city and beyond
   }
-  console.log(counter);
   counter++;
 }
 
@@ -81,6 +81,17 @@ function createFuture(data) {
     });
     future.insertAdjacentHTML("beforeend", futureData);
   }
+}
+
+export function showLoader() {
+  const loader = document.querySelector("#loader");
+  console.log("Loader showing");
+  loader.classList.add("show");
+}
+
+function hideLoader() {
+  const loader = document.querySelector("#loader");
+  loader.classList.remove("show");
 }
 
 export function createMap(data) {

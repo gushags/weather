@@ -129,3 +129,16 @@ h4 {
   font-size: x-small;
   margin-right: 5px;
 }
+
+/* loader styling */
+#loader {
+  background: #b1d3dd;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  display: none;
+}
+#loader.show {
+  display: block;
+}

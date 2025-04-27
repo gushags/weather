@@ -1,9 +1,10 @@
 // weather.js
 
-import { viewError } from "./view";
+import { viewError, showLoader } from "./view";
 
 export const getWeather = function getWeatherFromAPI(url) {
   return new Promise(function (resolve, reject) {
+    showLoader();
     fetch(
       `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${url}?unitGroup=us&key=CSTMFQVTDD4LWQ6UZC2ZNDBPD&contentType=json`,
       { mode: "cors" }
